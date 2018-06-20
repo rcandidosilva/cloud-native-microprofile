@@ -11,7 +11,7 @@ import javax.ws.rs.Path;
 public class ConferenceResource {
 
     @Inject
-    @ConfigProperty(name = "CONFERENCE_NAME", defaultValue = "The Developers Conference")
+    @ConfigProperty(name = "CONFERENCE_NAME", defaultValue = "Oracle Code")
     String conference;
 
     @GET
