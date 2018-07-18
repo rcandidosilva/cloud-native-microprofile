@@ -4,12 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>demo</groupId>
   <artifactId>microprofile-conference</artifactId>
-  <name>WildFly Swarm Example</name>
+  <name>MicroProfile Conference</name>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <properties>
-    <version.wildfly.swarm>2018.4.1</version.wildfly.swarm>
+    <version.thorntail>2.0.0.Final</version.thorntail>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -19,9 +19,9 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>org.wildfly.swarm</groupId>
+        <groupId>io.thorntail</groupId>
         <artifactId>bom-all</artifactId>
-        <version>${version.wildfly.swarm}</version>
+        <version>${version.thorntail}</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -31,9 +31,9 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.wildfly.swarm</groupId>
-        <artifactId>wildfly-swarm-plugin</artifactId>
-        <version>${version.wildfly.swarm}</version>
+        <groupId>io.thorntail</groupId>
+        <artifactId>thorntail-maven-plugin</artifactId>
+        <version>${version.thorntail}</version>
         <executions>
           <execution>
             <goals>
@@ -52,24 +52,15 @@
   </build>
 
   <dependencies>
-    <!-- Java EE 7 dependency -->
     <dependency>
-      <groupId>javax</groupId>
-      <artifactId>javaee-api</artifactId>
-      <version>7.0</version>
-      <scope>provided</scope>
-    </dependency>
-    <!-- WildFly Swarm Fractions -->
-    <dependency>
-      <groupId>org.wildfly.swarm</groupId>
+      <groupId>io.thorntail</groupId>
       <artifactId>microprofile</artifactId>
     </dependency>
-
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.16.20</version>
     </dependency>
-
   </dependencies>
+
 </project>
